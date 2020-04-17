@@ -12,7 +12,7 @@ import ru.avalon.java.dev.j10.labs.Sort;
  * @see <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0_%D0%BF%D1%83%D0%B7%D1%8B%D1%80%D1%8C%D0%BA%D0%BE%D0%BC">Пузырьковая сортировка</a>
  */
 public class BubbleSort implements Sort {
-
+    private int[] array;
     /**
      * {@inheritDoc}
      */
@@ -20,5 +20,20 @@ public class BubbleSort implements Sort {
         /*
          * TODO(Студент): Реализовать метод sort класса BubbleSort
          */
+        int l = array.length;
+        for (int i = l - 1; i >= 1; i--){
+            for (int j = 0; j < i; j++){
+                if(array[j] > array[j + 1]){
+                    int dummy = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = dummy;
+                }
+            }
+        }
+        this.array = array;
+    }
+
+    public int[] getArray(){
+        return this.array;
     }
 }

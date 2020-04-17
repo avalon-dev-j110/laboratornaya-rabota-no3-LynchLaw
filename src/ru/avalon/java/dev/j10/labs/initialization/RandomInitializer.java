@@ -14,7 +14,7 @@ import ru.avalon.java.dev.j10.labs.Initializer;
  * инициализации.
  */
 public class RandomInitializer implements Initializer {
-
+    private int[] array;
     /**
      * Выполняет инициализацию массива, значениями
      * последовательности случайных чисел.
@@ -25,5 +25,13 @@ public class RandomInitializer implements Initializer {
         /*
          * TODO(Студент): Реализовать метод initialize класса RandomInitializer
          */
+        for(int i = 0; i < array.length; i++){
+            array[i] = (int) (Math.random() * 100 - 50);
+            this.array = array;
+        }
+    }
+
+    public int[] getArray(){
+        return this.array;
     }
 }
