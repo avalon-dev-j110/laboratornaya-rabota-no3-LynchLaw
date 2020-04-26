@@ -44,35 +44,32 @@ public class Application {
 	    array = new int[20];
 	    for(int i = 0; i < 20; i++) array[i] = i + 1;
 
-		FibonacciInitializer fi = new FibonacciInitializer(0, array);
-		array = fi.getArray();
+		System.out.println("FibonacciInitializer");
+		FibonacciInitializer fi = new FibonacciInitializer();
+		fi.initialize(array);
+		System.out.println(Arrays.toString(array));
 
 		int sum = 0;
 		for(int n: array) sum += n;
+		System.out.println("sum = " + sum);
 
-		System.out.println(Arrays.toString(array));
-		System.out.println(sum);
-
-		array = Randomized(array);
+		System.out.println("RandomInitializer");
+		RandomInitializer ri = new RandomInitializer();
+		ri.initialize(array);
 		System.out.println(Arrays.toString(array));
 
 		BubbleSort bs = new BubbleSort();
+		System.out.println("BubbleSort");
 		bs.sort(array);
-		array = bs.getArray();
 		System.out.println(Arrays.toString(array));
 
-		array = Randomized(array);
+		System.out.println("RandomInitializer");
+		ri.initialize(array);
 		System.out.println(Arrays.toString(array));
 
+		System.out.println("ShellSort");
 		ShellSort ss = new ShellSort();
 		ss.sort(array);
-		array = ss.getArray();
 		System.out.println(Arrays.toString(array));
     }
-
-    private static int[] Randomized(int[] array){
-		RandomInitializer ri = new RandomInitializer();
-		ri.initialize(array);
-		return ri.getArray();
-	}
 }
