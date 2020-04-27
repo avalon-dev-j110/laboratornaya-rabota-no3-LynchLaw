@@ -41,8 +41,9 @@ public class Application {
          *    сортировки Шелла.
 	     */
 
-	    array = new int[20];
-	    for(int i = 0; i < 20; i++) array[i] = i + 1;
+	    int l = 20;
+	    array = new int[l];
+	    for(int i = 0; i < l; i++) array[i] = i + 1;
 
 		System.out.println("FibonacciInitializer");
 		FibonacciInitializer fi = new FibonacciInitializer();
